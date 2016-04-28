@@ -62,6 +62,22 @@ class muppet (
     content => "${locale} UTF-8",
   }
   
+  file { '/etc/auto.master':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0444',
+    source => "puppet:///modules/${module_name}/etc/auto.master",
+  }
+
+  file { '/etc/auto.home':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0444',
+    source => "puppet:///modules/${module_name}/etc/auto.home",
+  }
+
   exec { 'locale-gen':
     command     => '/usr/sbin/locale-gen',
     subscribe   => File['/etc/locale.gen'],
