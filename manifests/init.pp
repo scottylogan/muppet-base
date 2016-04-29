@@ -1,4 +1,4 @@
-# == Class: muppet
+# == Class: base
 #
 # Base configuration for muppets.
 #
@@ -22,13 +22,25 @@
 #
 # Copyright 2016 Scotty Logan
 #
-class muppet (
+class base (
   $timezone = 'PST8PDT',
   $locale   = 'en_US.UTF-8'
 ) {
-  include muppet::packages
-  include muppet::sudo
-  include muppet::users
+
+  class { 'apt':
+    update => {
+      frequency => 'daily',
+    },
+    purge  => {
+      'sources.list'   => true,
+      'sources.list.d' => true,
+    }
+  }
+
+  include base::os::${operatingsystem}
+  include base::packages
+  include base::sudo
+  include base::users
 
   file { '/etc/localtime':
     ensure => file,
@@ -62,31 +74,15 @@ class muppet (
     content => "${locale} UTF-8",
   }
   
-  file { '/etc/auto.master':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0444',
-    source => "puppet:///modules/${module_name}/etc/auto.master",
-  }
-
-  file { '/etc/auto.home':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0444',
-    source => "puppet:///modules/${module_name}/etc/auto.home",
-  }
-
   exec { 'locale-gen':
     command     => '/usr/sbin/locale-gen',
     subscribe   => File['/etc/locale.gen'],
     refreshonly => true,
   }
 
-  Group              <| tag == sysadmin |>
-  User               <| tag == sysadmin |>
-  File               <| tag == sysadmin |>
-  Ssh_Authorized_Key <| tag == sysadmin |>
+
+  Group <| tag == sysadmin |>
+  User  <| tag == sysadmin |>
+  File  <| tag == sysadmin |>
 }
 
