@@ -43,9 +43,13 @@ class base::users (
     gid => 32002,
   }
 
+  group { 'dev':
+    gid => 32003,
+  }
+
   @group { 'scotty':
     gid => 1000,
-    tag => [sysadmin, parent],
+    tag => [sysadmin, parent, dev],
   }
   
   @user { 'scotty':
@@ -55,7 +59,7 @@ class base::users (
     shell          => '/bin/bash',
     uid            => 1000,
     gid            => 1000,
-    groups         => [ 'root', 'sudo', 'parents', 'family' ],
+    groups         => [ 'root', 'sudo', 'parents', 'family', 'dev' ],
     purge_ssh_keys => true,
     tag            => [sysadmin, dev, parent],
   }
