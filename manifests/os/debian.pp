@@ -6,7 +6,8 @@ class base::os::debian {
     release  => $::lsbdistcodename,
     repos    => 'main',
     key      => {
-      'source' => 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key',
+      'id'     => '9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280',
+      'server' => 'keyserver.ubuntu.com',
     },
     include  => {
       'deb' => true,

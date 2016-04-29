@@ -6,7 +6,8 @@ class base::os::debian::armv7l {
     release  => $::lsbdistcodename,
     repos    => 'contrib firmware main non-free rpi',
     key      => {
-      'source' => 'http://mirrordirector.raspbian.org/raspbian.public.key',
+      'id'     => 'A0DA38D0D76E8B5D638872819165938D90FDDD2E',
+      'server' => 'keyserver.ubuntu.com',
     },
     include  => {
       'deb' => true,
@@ -19,7 +20,8 @@ class base::os::debian::armv7l {
     release  => $::lsbdistcodename,
     repos    => 'main ui',
     key      => {
-      'source' => 'https://archive.raspberrypi.org/debian/raspberrypi.gpg.key',
+      'id'     => 'CF8A1AF502A2AA2D763BAE7E82B129927FA3303E',
+      'server' => 'keyserver.ubuntu.com',
     },
     include  => {
       'deb' => true,
@@ -32,7 +34,8 @@ class base::os::debian::armv7l {
     release  => $::lsbdistcodename,
     repos    => 'main',
     key      => {
-      'source' => 'https://packagecloud.io/gpg.key',
+      'id'     => '418A7F2FB0E1E6E7EABF6FE8C2E73424D59097AB',
+      'server' => 'keyserver.ubuntu.com',
     },
     include  => {
       'deb' => true,
