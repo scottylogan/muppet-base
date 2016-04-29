@@ -27,8 +27,6 @@ class base (
   $locale   = 'en_US.UTF-8'
 ) {
 
-  $base_os = downcase("base::os::${::operatingsystem}")
-
   class { 'apt':
     update => {
       frequency => 'daily',
