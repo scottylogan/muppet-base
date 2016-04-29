@@ -1,14 +1,21 @@
 {
-  "name": "scottylogan-muppet",
-  "version": "0.1.1",
-  "author": "scottylogan",
+  "name": "muppet-base",
+  "version": "0.1.2",
+  "author": "Scotty Logan <scotty@catbert.net>",
   "summary": "Base configuration for a muppet machine",
-  "license": "Apache 2.0",
-  "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "license": "MIT",
+  "source": "https://github.com/scottylogan/muppet-base.git",
+  "project_page": "https://github.com/scottylogan/muppet-base",
+  "issues_url": "https://github.com/scottylogan/muppet-base/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    },
+    {
+      "name": "puppetlabs-apt",
+      "version_requirement": ">= 2.2.0"
+    }
   ]
 }
 
