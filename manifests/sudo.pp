@@ -1,4 +1,4 @@
-# == Class: muppet::sudo
+# == Class: base::sudo
 #
 # Sudo configuration for muppets
 #
@@ -22,7 +22,7 @@
 #
 # Copyright 2016 Scotty Logan
 #
-class muppet::sudo {
+class base::sudo {
 
   package { 'sudo':
     ensure  => latest,
