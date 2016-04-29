@@ -27,6 +27,8 @@ class base (
   $locale   = 'en_US.UTF-8'
 ) {
 
+  $base_os = downcase("base::os::${::operatingsystem}")
+
   class { 'apt':
     update => {
       frequency => 'daily',
@@ -37,7 +39,8 @@ class base (
     }
   }
 
-  include base::os::${operatingsystem}
+#  include $base_os
+  include downcase("base::os::${::operatingsystem}")
   include base::packages
   include base::sudo
   include base::users
