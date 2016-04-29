@@ -1,4 +1,4 @@
-# == Class: muppet
+# == Class: base::packages
 #
 # Full description of class muppet here.
 #
@@ -35,10 +35,12 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class muppet::packages {
+class base::packages {
+
 
   package {
     [
+      'autofs',
       'bash',
       'bash-completion',
       'bc',
