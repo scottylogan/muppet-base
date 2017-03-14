@@ -40,7 +40,6 @@ class base::packages {
 
   package {
     [
-      'autofs',
       'bash',
       'bash-completion',
       'bc',
