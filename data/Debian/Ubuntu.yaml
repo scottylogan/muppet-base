@@ -1,0 +1,25 @@
+# data/Debian/Ubuntu.yaml
+# generic defaults for Ubuntu systems
+---
+base::packages::sources:
+  main:
+    comment: "Ubuntu APT Repo"
+    location: http://us.archive.ubuntu.com/ubuntu/
+    repos: "main restricted universe"
+  updates:
+    comment: "Ubuntu Archive Repo"
+    release:  "%{lsbdistcodename}-updates"
+    location: http://us.archive.ubuntu.com/ubuntu/
+    repos: "main restricted universe"
+  security:
+    comment: "Ubuntu Security Repo"
+    location: http://security.ubuntu.com/ubuntu
+    release:  "%{lsbdistcodename}-security"
+    repos: "main restricted universe"
+  backports:
+    comment: "Ubuntu Backports APT Repo"
+    location: http://us.archive.ubuntu.com/ubuntu/
+    release: "%{lsbdistcodename}-backports"
+    repos: "main restricted universe"
+  docker:
+    release: "ubuntu-%{::lsbdistcodename}"

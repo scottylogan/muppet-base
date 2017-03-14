@@ -1,0 +1,44 @@
+# data/common.yaml
+# really generic defaults
+---
+base::add_cloud_config: true
+base::timezone: PST8PDT
+base::lang: en_US
+base::charset: UTF-8
+base::locale: en_US.UTF-8
+base::packages::easy_install: /usr/bin/easy_install
+base::packages::docker_package: docker
+base::packages::install:
+  - bash
+  - bash-completion
+  - bc
+  - bzip2
+  - ca-certificates
+  - cloud-init
+  - curl
+  - ethtool
+  - git
+  - gzip
+  - iptables
+  - less
+  - logrotate
+  - lsof
+  - manpages
+  - ntp
+  - ntpdate
+  - openssh-server
+  - pciutils
+  - rsyslog
+  - tzdata
+  - unzip
+  - wget
+base::packages::uninstall:
+  - nano
+base::packages::pip: []
+lookup_options:
+  base::packages::sources:
+    merge: deep
+  base::packages::install:
+    merge: deep
+  base::packages::uninstall:
+    merge: deep

@@ -32,34 +32,25 @@ class base::users (
   }
 
   group { 'parents':
-    gid => 32000,
+    gid => 65536,
   }
 
   group { 'kids':
-    gid => 32001,
+    gid => 65537,
   }
 
   group { 'family':
-    gid => 32002,
+    gid => 65538,
   }
 
-  group { 'dev':
-    gid => 32003,
-  }
-
-  @group { 'scotty':
-    gid => 1000,
-    tag => [sysadmin, parent, dev],
-  }
-  
   @user { 'scotty':
     comment        => 'Scotty Logan',
     home           => '/home/scotty',
     managehome     => $managehome,
     shell          => '/bin/bash',
-    uid            => 1000,
-    gid            => 1000,
-    groups         => [ 'root', 'sudo', 'parents', 'family', 'dev' ],
+    uid            => 1026,
+    gid            => 'family',
+    groups         => [ 'root', 'sudo', 'parents' ],
     purge_ssh_keys => true,
     tag            => [sysadmin, dev, parent],
   }
@@ -92,53 +83,38 @@ class base::users (
     tag  => [sysadmin, dev, parent],
   }
 
-  @group { 'heather':
-    gid => 1001,
-    tag => [parent],
-  }
-  
   @user { 'heather':
     comment        => 'Heather Logan',
     home           => '/home/heather',
     managehome     => $managehome,
     shell          => '/bin/bash',
-    uid            => 1001,
-    gid            => 1001,
-    groups         => [ 'parents', 'family' ],
+    uid            => 1027,
+    gid            => 'family',
+    groups         => [ 'parents' ],
     purge_ssh_keys => true,
     tag            => [parent],
   }
 
-  @group { 'caitlin':
-    gid => 1002,
-    tag => [kid],
-  }
-  
   @user { 'caitlin':
     comment        => 'Caitlin Logan',
     home           => '/home/caitlin',
     managehome     => $managehome,
     shell          => '/bin/bash',
-    uid            => 1002,
-    gid            => 1002,
-    groups         => [ 'kids', 'family' ],
+    uid            => 1028,
+    gid            => 'family',
+    groups         => [ 'kids' ],
     purge_ssh_keys => true,
     tag            => [kid],
   }
 
-  @group { 'cerys':
-    gid => 1003,
-    tag => [kid],
-  }
-  
   @user { 'cerys':
     comment        => 'Cerys Logan',
     home           => '/home/cerys',
     managehome     => $managehome,
     shell          => '/bin/bash',
-    uid            => 1003,
-    gid            => 1003,
-    groups         => [ 'kids', 'family' ],
+    uid            => 1029,
+    gid            => 'family',
+    groups         => [ 'kids' ],
     purge_ssh_keys => true,
     tag            => [kid],
   }

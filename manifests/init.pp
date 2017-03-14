@@ -23,64 +23,84 @@
 # Copyright 2016 Scotty Logan
 #
 class base (
-  $timezone = 'PST8PDT',
-  $locale   = 'en_US.UTF-8'
+  $timezone,
+  $locale,
+  $lang,
+  $charset,
+  $add_cloud_config,
 ) {
 
-  class { 'apt':
-    update => {
-      frequency => 'daily',
-    },
-    purge  => {
-      'sources.list'   => true,
-      'sources.list.d' => true,
-    }
-  }
-
-#  include $base_os
-  include downcase("base::os::${::operatingsystem}")
   include base::packages
-  include base::sudo
-  include base::users
 
-  file { '/etc/localtime':
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0444',
-    source => "/usr/share/zoneinfo/${timezone}",
+  if ($add_cloud_config) {
+
+    file { '/etc/cloud/cloud.cfg':
+      ensure  => file,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      source  => "puppet:///modules/${module_name}/cloud.cfg",
+      require => Package['cloud-init'],
+    }
+
   }
 
   file { '/etc/timezone':
     ensure  => file,
-    owner   => 'root',
-    group   => 'root',
+    owner   => 0,
+    group   => 0,
     mode    => '0444',
     content => $timezone,
   }
-  
-  file { '/etc/default/locale':
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0444',
-    source => "puppet:///modules/${module_name}/etc/default/locale",
-  }
-  
-  file { '/etc/locale.gen':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0444',
-    content => "${locale} UTF-8",
-  }
-  
-  exec { 'locale-gen':
-    command     => '/usr/sbin/locale-gen',
-    subscribe   => File['/etc/locale.gen'],
-    refreshonly => true,
+
+  if ($::osfamily != 'Darwin') {
+
+    file { '/etc/localtime':
+      ensure  => link,
+      owner   => 0,
+      group   => 0,
+      mode    => '0644',
+      target  => "/usr/share/zoneinfo/${timezone}",
+      require => Package['tzdata'],
+    }
+
+    file { '/etc/default/locale':
+      ensure => file,
+      owner  => 0,
+      group  => 0,
+      mode   => '0444',
+      source => "puppet:///modules/${module_name}/etc/default/locale",
+    }
+
+  } else {
+
+    file { '/etc/localtime':
+      ensure  => link,
+      owner   => 0,
+      group   => 0,
+      mode    => '0644',
+      target  => "/usr/share/zoneinfo/${timezone}",
+    }
+
   }
 
+  if ($::osfamily == 'Debian') {
+    file { '/etc/locale.gen':
+      ensure  => file,
+      owner   => 0,
+      group   => 0,
+      mode    => '0444',
+      content => "${locale} ${charset}",
+    }
+
+    exec { 'locale-gen':
+      command     => '/usr/sbin/locale-gen',
+      subscribe   => File['/etc/locale.gen'],
+      refreshonly => true,
+    }
+  }
+
+  include base::users
 
   Group <| tag == sysadmin |>
   User  <| tag == sysadmin |>

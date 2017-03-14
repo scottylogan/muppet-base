@@ -1,21 +1,35 @@
 {
   "name": "muppet-base",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "author": "Scotty Logan <scotty@catbert.net>",
   "summary": "Base configuration for a muppet machine",
   "license": "MIT",
   "source": "https://github.com/scottylogan/muppet-base.git",
   "project_page": "https://github.com/scottylogan/muppet-base",
   "issues_url": "https://github.com/scottylogan/muppet-base/issues",
-  "dependencies": [
+
+  "operatingsystem_support": [
     {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
+      "operatingsystem": "Darwin",
+      "operatingsystemmajrelease": [ "15", "16" ]
     },
     {
-      "name": "puppetlabs-apt",
-      "version_requirement": ">= 2.2.0"
+      "operatingsystem": "Debian",
+      "operatingsystemmajrelease": [ "7", "8" ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemmajrelease": [ "14.04", "16.04" ]
     }
+  ],
+
+  "requirements": [
+    { "name": "puppet", "version_requirement": "4.x" }
+  ],
+
+  "dependencies": [
+    { "name": "puppetlabs-stdlib",    "version_requirement": ">= 1.0.0" },
+    { "name": "puppetlabs-apt",       "version_requirement": ">= 2.2.0" },
+    { "name": "thekevjames-homebrew", "version_requirement": ">= 1.5.0" }
   ]
 }
-

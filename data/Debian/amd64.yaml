@@ -1,0 +1,21 @@
+# data/Debian/amd64.yaml
+# defaults for Debian-based AMD64 systems
+---
+base::install_packages:
+  - pciutils
+base::packages::sources:
+  updates:
+    comment: "Debian Updates APT Repo"
+    location: https://deb.debian.org/debian
+    release: "%{lsbdistcodename}-updates"
+    repos: "main contrib non-free"
+  security:
+    comment: "Debian Security APT Repo"
+    location: https://deb.debian.org/debian-security/
+    release: "%{lsbdistcodename}/updates"
+    repos: "main contrib non-free"
+  backports:
+    comment: "Debian Backports APT Repo"
+    location: https://deb.debian.org/debian
+    release: "%{lsbdistcodename}-backports"
+    repos: "main contrib non-free"

@@ -1,0 +1,15 @@
+# data/Debian/docker.yaml
+# defaults for Debian-based Docker systems
+#
+# we could remove sudo, but it requires a special
+# environment variable to be set (SUDO_FORCE_REMOVE=yes)
+---
+base::add_cloud_config: false
+base::packages::uninstall:
+  - cron
+  - ethtool
+  - firmware-linux-free
+  - iptables
+  - isc-dhcp-client
+  - manpages
+

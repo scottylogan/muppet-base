@@ -1,0 +1,48 @@
+# data/Debian.yaml
+# generic defaults for Debian-based systems
+---
+base::packages::package_type: apt
+base::packages::docker_package: docker
+base::packages::install:
+  - adduser
+  - bind9-host
+  - cron
+  - dnsutils
+  - gnupg
+  - isc-dhcp-client
+  - manpages
+  - openssh-client
+  - python-setuptools
+  - vim-tiny
+  - xz-utils
+base::packages::sources:
+  puppetlabs:
+    comment: "PuppetLabs APT Repo"
+    location: http://apt.puppetlabs.com
+    repos: main PC1
+    key:
+      id: 6F6B15509CF8E59E6E469F327F438280EF8D349F
+      server: pgp.mit.edu
+  nodesource:
+    comment: "NodeSource node 4.x APT Repo"
+    location: https://deb.nodesource.com/node_4.x
+    repos: main
+    key:
+      id: 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280
+      server: keyserver.ubuntu.com
+  itlab:
+    comment: "Stanford IT Lab APT Repo"
+    location: http://repo.itlab.stanford.edu
+    repos:    main
+    key:
+      id:     9A559486A1F8A1DA93809EA37CBDD8B10F39DA6C
+      source: http://repo.itlab.stanford.edu/keys/itlab.stanford.edu.key
+  docker:
+    comment: "Docker APT Repo"
+    location: https://apt.dockerproject.org/repo/
+    release:  "debian-%{::lsbdistcodename}"
+    repos:    main
+    key:
+      id:     58118E89F3A912897C070ADBF76221572C52609D
+      server: keyserver.ubuntu.com
+

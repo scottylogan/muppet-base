@@ -1,0 +1,11 @@
+# data/Debian/Debian.yaml
+# generic defaults for real Debian systems
+---
+base::packages::install:
+  - firmware-linux-free
+base::packages::sources:
+  main:
+    comment:  "Debian APT Repo"
+    location: http://deb.debian.org/debian
+    repos: "main contrib non-free"
+
