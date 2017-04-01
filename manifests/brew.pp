@@ -1,4 +1,12 @@
-class base::brew (
+# == Class: muppet::brew
+#
+# Generic Homebrew configuration for a Muppet
+#
+# === Authors
+#
+# Scotty Logan <swl@scottylogan.com>
+#
+class muppet::brew (
   $sources, # dummy
   $taps,
   $casks,

@@ -1,16 +1,11 @@
-# data/Debian/docker.yaml
-# defaults for Debian-based Docker systems
+# data/RedHat/docker.yaml
+# defaults for RedHat-based Docker systems
 #
 # we could remove sudo, but it requires a special
 # environment variable to be set (SUDO_FORCE_REMOVE=yes)
 ---
 muppet::add_cloud_config: false
 muppet::packages::uninstall:
-  - cron
-  - ethtool
-  - firmware-linux-free
-  - iptables
-  - isc-dhcp-client
-  - manpages
-  - pciutils
-
+  - cronie
+  - rsyslog
+  - man-pages

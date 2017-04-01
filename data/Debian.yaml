@@ -1,10 +1,12 @@
 # data/Debian.yaml
 # generic defaults for Debian-based systems
 ---
-base::packages::package_type: apt
-base::packages::docker_package: docker
-base::packages::install:
+muppet::packages::package_type: apt
+muppet::packages::docker_package: docker
+muppet::packages::install:
   - adduser
+  - aptitude
+  - apt-utils
   - bind9-host
   - cron
   - dnsutils
@@ -15,7 +17,7 @@ base::packages::install:
   - python-setuptools
   - vim-tiny
   - xz-utils
-base::packages::sources:
+muppet::packages::sources:
   puppetlabs:
     comment: "PuppetLabs APT Repo"
     location: http://apt.puppetlabs.com
@@ -30,13 +32,6 @@ base::packages::sources:
     key:
       id: 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280
       server: keyserver.ubuntu.com
-  itlab:
-    comment: "Stanford IT Lab APT Repo"
-    location: http://repo.itlab.stanford.edu
-    repos:    main
-    key:
-      id:     9A559486A1F8A1DA93809EA37CBDD8B10F39DA6C
-      source: http://repo.itlab.stanford.edu/keys/itlab.stanford.edu.key
   docker:
     comment: "Docker APT Repo"
     location: https://apt.dockerproject.org/repo/

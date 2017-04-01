@@ -1,8 +1,8 @@
-# data/Debian/Debian/armv7l_8.yaml
-# defaults for Debian 8.x (jessie) armv7l systems (Raspberry Pis)
+# data/Debian/armv7l_8.yaml
+# defaults for Debian armv7l systems (Raspberry Pis)
 ---
-base::packages::docker_package: docker-hypriot
-base::packages::sources:
+muppet::packages::docker_package: docker-hypriot
+muppet::packages::sources:
   main:
     comment:  "Raspbian APT Repo"
     location: http://mirrordirector.raspbian.org/raspbian/

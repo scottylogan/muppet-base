@@ -10,6 +10,10 @@
 
   "operatingsystem_support": [
     {
+      "operatingsystem": "CentOS",
+      "operatingsystemmajrelease": [ "6", "7" ]
+    },
+    {
       "operatingsystem": "Darwin",
       "operatingsystemmajrelease": [ "15", "16" ]
     },

@@ -1,7 +1,7 @@
 # data/Debian/Ubuntu.yaml
 # generic defaults for Ubuntu systems
 ---
-base::packages::sources:
+muppet::packages::sources:
   main:
     comment: "Ubuntu APT Repo"
     location: http://us.archive.ubuntu.com/ubuntu/

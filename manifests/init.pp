@@ -1,6 +1,6 @@
-# == Class: base
+# == Class: muppet
 #
-# Base configuration for muppets.
+# Base configuration for a Muppet.
 #
 # === Parameters
 #
@@ -18,11 +18,7 @@
 #
 # Scotty Logan <scotty@scottylogan.com>
 #
-# === Copyright
-#
-# Copyright 2016 Scotty Logan
-#
-class base (
+class muppet (
   $timezone,
   $locale,
   $lang,
@@ -30,7 +26,7 @@ class base (
   $add_cloud_config,
 ) {
 
-  include base::packages
+  include muppet::packages
 
   if ($add_cloud_config) {
 
@@ -53,16 +49,15 @@ class base (
     content => $timezone,
   }
 
-  if ($::osfamily != 'Darwin') {
+  file { '/etc/localtime':
+    ensure => link,
+    owner  => 0,
+    group  => 0,
+    mode   => '0644',
+    target => "/usr/share/zoneinfo/${timezone}",
+  }
 
-    file { '/etc/localtime':
-      ensure  => link,
-      owner   => 0,
-      group   => 0,
-      mode    => '0644',
-      target  => "/usr/share/zoneinfo/${timezone}",
-      require => Package['tzdata'],
-    }
+  if ($::osfamily != 'Darwin') {
 
     file { '/etc/default/locale':
       ensure => file,
@@ -72,35 +67,9 @@ class base (
       source => "puppet:///modules/${module_name}/etc/default/locale",
     }
 
-  } else {
-
-    file { '/etc/localtime':
-      ensure  => link,
-      owner   => 0,
-      group   => 0,
-      mode    => '0644',
-      target  => "/usr/share/zoneinfo/${timezone}",
-    }
-
   }
 
-  if ($::osfamily == 'Debian') {
-    file { '/etc/locale.gen':
-      ensure  => file,
-      owner   => 0,
-      group   => 0,
-      mode    => '0444',
-      content => "${locale} ${charset}",
-    }
-
-    exec { 'locale-gen':
-      command     => '/usr/sbin/locale-gen',
-      subscribe   => File['/etc/locale.gen'],
-      refreshonly => true,
-    }
-  }
-
-  include base::users
+  include muppet::users
 
   Group <| tag == sysadmin |>
   User  <| tag == sysadmin |>

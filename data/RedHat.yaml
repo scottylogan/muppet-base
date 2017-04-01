@@ -1,0 +1,35 @@
+# data/RedHat.yaml
+# generic defaults for RedHat-based systems
+---
+muppet::packages::package_type: yum
+muppet::packages::docker_package: docker
+muppet::packages::install:
+  - bind-utils
+  - cronie
+  - gnupg2
+  - dhclient
+  - man-pages
+  - openssh-clients
+  - python-setuptools
+  - shadow-utils
+  - vim-minimal
+  - xz
+muppet::packages::sources:
+  puppetlabs:
+    name: Puppet Labs PC1 Repository el 7
+    enabled: 1
+    baseurl: http://yum.puppetlabs.com/el/7/PC1/$basearch
+    gpgcheck: 1
+    gpgkey: https://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs
+  nodesource:
+    name: Node.js Packages for Enterprise Linux 7 - $basearch
+    enabled: 1
+    baseurl: https://rpm.nodesource.com/pub_4.x/el/7/$basearch
+    gpgcheck: 1
+    gpgkey: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
+  epel:
+    name: Extra Packages for Enterprise Linux 7 - $basearch
+    enabled: 1
+    baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
+    gpgcheck: 1
+    gpgkey: https://getfedora.org/static/352C64E5.txt

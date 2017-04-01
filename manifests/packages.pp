@@ -1,4 +1,12 @@
-class base::packages (
+# == Class: muppet::packages
+#
+# Generic package installation for a Muppet
+#
+# === Authors
+#
+# Scotty Logan <swl@scottylogan.com>
+#
+class muppet::packages (
   $install,
   $uninstall,
   $pip,
@@ -11,7 +19,7 @@ class base::packages (
 
   Package { provider => $package_type }
 
-  class { "base::${package_type}":
+  class { "muppet::${package_type}":
     sources => $sources
   }
 
