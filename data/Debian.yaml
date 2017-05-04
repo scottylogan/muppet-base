@@ -1,9 +1,9 @@
 # data/Debian.yaml
 # generic defaults for Debian-based systems
 ---
-muppet::packages::package_type: apt
-muppet::packages::docker_package: docker
-muppet::packages::install:
+base::packages::package_type: apt
+base::packages::docker_package: docker
+base::packages::install:
   - adduser
   - aptitude
   - apt-utils
@@ -17,7 +17,7 @@ muppet::packages::install:
   - python-setuptools
   - vim-tiny
   - xz-utils
-muppet::packages::sources:
+base::packages::sources:
   puppetlabs:
     comment: "PuppetLabs APT Repo"
     location: http://apt.puppetlabs.com

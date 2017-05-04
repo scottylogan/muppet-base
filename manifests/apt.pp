@@ -1,4 +1,4 @@
-# == Class: muppet::apt
+# == Class: base::apt
 #
 # Generic APT configuration for a Muppet
 #
@@ -6,7 +6,7 @@
 #
 # Scotty Logan <swl@scottylogan.com>
 #
-class muppet::apt(
+class base::apt(
   $sources,
 ) {
 
@@ -44,7 +44,7 @@ class muppet::apt(
     owner   => 0,
     group   => 0,
     mode    => '0444',
-    content => "${muppet::locale} ${muppet::charset}",
+    content => "${base::locale} ${base::charset}",
   }
 
   exec { 'locale-gen':

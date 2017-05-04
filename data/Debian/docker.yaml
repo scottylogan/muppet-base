@@ -4,8 +4,8 @@
 # we could remove sudo, but it requires a special
 # environment variable to be set (SUDO_FORCE_REMOVE=yes)
 ---
-muppet::add_cloud_config: false
-muppet::packages::uninstall:
+base::add_cloud_config: false
+base::packages::uninstall:
   - cron
   - ethtool
   - firmware-linux-free

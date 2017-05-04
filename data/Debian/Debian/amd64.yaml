@@ -1,10 +1,10 @@
 # data/Debian/amd64.yaml
 # defaults for Debian-based AMD64 systems
 ---
-muppet::install_packages:
+base::install_packages:
   - firmware-linux-free
   - pciutils
-muppet::packages::sources:
+base::packages::sources:
   main:
     comment:  "Debian APT Repo"
     location: http://deb.debian.org/debian

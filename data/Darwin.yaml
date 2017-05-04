@@ -1,15 +1,15 @@
 # data/Darwin.yaml
 # generic defaults for Darwin-based systems
 ---
-muppet::add_cloud_config: false
-muppet::packages::package_type: brew
-muppet::packages::docker_package: docker
-muppet::brew::taps:
+base::add_cloud_config: false
+base::packages::package_type: brew
+base::packages::docker_package: docker
+base::brew::taps:
   - homebrew/core
   - homebrew/completions
   - homebrew/dupes
   - caskroom/casks
-muppet::packages::install:
+base::packages::install:
   - awscli
   - c-kermit
   - curl
@@ -23,7 +23,7 @@ muppet::packages::install:
   - wget
   - xz
   - zlib
-muppet::packages::uninstall:
+base::packages::uninstall:
   - ca-certificates
   - cloud-init
   - ethtool
@@ -35,5 +35,5 @@ muppet::packages::uninstall:
   - pciutils
   - tzdata
   - vim-tiny
-muppet::packages::pip: []
-muppet::packages::sources: []
+base::packages::pip: []
+base::packages::sources: []

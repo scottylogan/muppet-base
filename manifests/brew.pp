@@ -1,4 +1,4 @@
-# == Class: muppet::brew
+# == Class: base::brew
 #
 # Generic Homebrew configuration for a Muppet
 #
@@ -6,7 +6,7 @@
 #
 # Scotty Logan <swl@scottylogan.com>
 #
-class muppet::brew (
+class base::brew (
   $sources, # dummy
   $taps,
   $casks,

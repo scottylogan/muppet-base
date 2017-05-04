@@ -1,14 +1,14 @@
 # data/common.yaml
 # really generic defaults
 ---
-muppet::add_cloud_config: true
-muppet::timezone: PST8PDT
-muppet::lang: en_US
-muppet::charset: UTF-8
-muppet::locale: en_US.UTF-8
-muppet::packages::easy_install: /usr/bin/easy_install
-muppet::packages::docker_package: docker
-muppet::packages::install:
+base::add_cloud_config: true
+base::timezone: PST8PDT
+base::lang: en_US
+base::charset: UTF-8
+base::locale: en_US.UTF-8
+base::packages::easy_install: /usr/bin/easy_install
+base::packages::docker_package: docker
+base::packages::install:
   - bash
   - bash-completion
   - bc
@@ -32,13 +32,13 @@ muppet::packages::install:
   - tzdata
   - unzip
   - wget
-muppet::packages::uninstall:
+base::packages::uninstall:
   - nano
-muppet::packages::pip: []
+base::packages::pip: []
 lookup_options:
-  muppet::packages::sources:
+  base::packages::sources:
     merge: deep
-  muppet::packages::install:
+  base::packages::install:
     merge: deep
-  muppet::packages::uninstall:
+  base::packages::uninstall:
     merge: deep

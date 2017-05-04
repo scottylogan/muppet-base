@@ -1,4 +1,4 @@
-# == Class: muppet::users
+# == Class: base::users
 #
 # Virtual user configuration a Muppet.
 #
@@ -22,7 +22,7 @@
 #
 # Copyright 2016 Scotty Logan
 #
-class muppet::users (
+class base::users (
   $managehome = false,
 ) {
 

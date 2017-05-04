@@ -1,4 +1,4 @@
-# == Class: muppet
+# == Class: base
 #
 # Base configuration for a Muppet.
 #
@@ -18,7 +18,7 @@
 #
 # Scotty Logan <scotty@scottylogan.com>
 #
-class muppet (
+class base (
   $timezone,
   $locale,
   $lang,
@@ -26,7 +26,7 @@ class muppet (
   $add_cloud_config,
 ) {
 
-  include muppet::packages
+  include base::packages
 
   if ($add_cloud_config) {
 
@@ -69,7 +69,7 @@ class muppet (
 
   }
 
-  include muppet::users
+  include base::users
 
   Group <| tag == sysadmin |>
   User  <| tag == sysadmin |>

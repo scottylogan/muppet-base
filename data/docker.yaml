@@ -2,8 +2,8 @@
 # defaults for Docker systems
 #
 ---
-muppet::add_cloud_config: false
-muppet::packages::uninstall:
+base::add_cloud_config: false
+base::packages::uninstall:
   - cloud-init
   - logrotate
   - ntp
