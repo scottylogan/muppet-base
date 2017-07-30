@@ -8,9 +8,7 @@ base::add_cloud_config: false
 base::packages::uninstall:
   - cron
   - ethtool
-  - firmware-linux-free
   - iptables
   - isc-dhcp-client
   - manpages
-  - pciutils
 

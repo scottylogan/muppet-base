@@ -1,9 +1,6 @@
 # data/Debian/amd64.yaml
 # defaults for Debian-based AMD64 systems
 ---
-base::install_packages:
-  - firmware-linux-free
-  - pciutils
 base::packages::sources:
   main:
     comment:  "Debian APT Repo"

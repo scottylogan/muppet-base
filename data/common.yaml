@@ -27,7 +27,6 @@ base::packages::install:
   - ntp
   - ntpdate
   - openssh-server
-  - pciutils
   - rsyslog
   - tzdata
   - unzip
