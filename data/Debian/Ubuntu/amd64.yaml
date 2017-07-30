@@ -21,5 +21,3 @@ base::packages::sources:
     location: http://us.archive.ubuntu.com/ubuntu/
     release: "%{lsbdistcodename}-backports"
     repos: "main restricted universe"
-  docker:
-    release: "ubuntu-%{::lsbdistcodename}"
