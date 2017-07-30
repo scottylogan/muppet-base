@@ -2,7 +2,7 @@
 # generic defaults for Debian-based systems
 ---
 base::packages::package_type: apt
-base::packages::docker_package: docker
+base::packages::docker_package: docker-ce
 base::packages::install:
   - adduser
   - aptitude
@@ -24,20 +24,20 @@ base::packages::sources:
     repos: main PC1
     key:
       id: 6F6B15509CF8E59E6E469F327F438280EF8D349F
-      server: pgp.mit.edu
+      server: keyserver.ubuntu.com
   nodesource:
-    comment: "NodeSource node 4.x APT Repo"
-    location: https://deb.nodesource.com/node_4.x
+    comment: "NodeSource node 8.x APT Repo"
+    location: https://deb.nodesource.com/node_8.x
     repos: main
     key:
       id: 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280
       server: keyserver.ubuntu.com
   docker:
     comment: "Docker APT Repo"
-    location: https://apt.dockerproject.org/repo/
-    release:  "debian-%{::lsbdistcodename}"
-    repos:    main
+    location: https://download.docker.com/linux/ubuntu
+    repos: stable
+    architecture: amd64
     key:
-      id:     58118E89F3A912897C070ADBF76221572C52609D
+      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
       server: keyserver.ubuntu.com
 
