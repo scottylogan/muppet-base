@@ -23,6 +23,8 @@ hierarchy:
     path: "%{os.family}/%{os.name}/%{os.release.major}.yaml"
   - name: "OS Family / OS Name"
     path: "%{os.family}/%{os.name}.yaml"
+  - name: "OS Family / Virtual - Architecture"
+    path: "%{os.family}/%{virtual}_%{architecture}.yaml"
   - name: "OS Family / Virtual"
     path: "%{os.family}/%{virtual}.yaml"
   - name: "OS Family / Architecture"
