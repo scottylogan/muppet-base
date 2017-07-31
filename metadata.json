@@ -1,6 +1,6 @@
 {
   "name": "muppet-base",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "author": "Scotty Logan <scotty@catbert.net>",
   "summary": "Base configuration for a muppet machine",
   "license": "MIT",
