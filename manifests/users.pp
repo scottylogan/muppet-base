@@ -83,6 +83,13 @@ class base::users (
     tag  => [sysadmin, dev, parent],
   }
 
+  @ssh_authorized_key { 'scotty-ipad-mini':
+    user => 'scotty',
+    type => 'ssh-rsa',
+    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC1B1+OtFoXOuphM26snCzx1zOXKt0ZNrtuNl6hCGJF1NkZyifbg1TXumRDoTNexnNSOQRk4wLWQeA0UKdCuwkfLTUB0H6r4JC5OR9Ic9vsAAPkMX9X4iPhVcP567CscD6Bm9QMf7Ek5xFwFZFFEOZ1r6AFoWR3dG83+1q5RNwEVew8NzvltkoKn63+62nBDQjRUHFXD35Mg1jRj3jpVtjzeums/Zfdy2zY9n2oh6J8lGAK6XPEestr+EGeBCsbvjFV0/wBDk/vI0gtzGEgo4vCatnOdIkmfcYPpip39l28l1uxgZ9oQqtLgKtaEIWZ1rFNzmNbpHsmxxx7LMi93LV3',
+    tag  => [sysadmin, dev, parent],
+  }
+
   @user { 'heather':
     comment        => 'Heather Logan',
     home           => '/home/heather',

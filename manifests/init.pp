@@ -95,5 +95,6 @@ class base (
   Group <| tag == sysadmin |>
   User  <| tag == sysadmin |>
   File  <| tag == sysadmin |>
+  Ssh_authorized_key <| tag == sysadmin |>
 }
 
