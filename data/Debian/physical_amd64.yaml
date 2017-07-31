@@ -2,10 +2,5 @@
 # defaults for physical Debian-based systems
 #
 ---
-base::avahi: true
-base::add_cloud_config: false
 base::packages::install:
-  - firmware-linux-free
   - pciutils
-base::packages::uninstall:
-  - cloud-init

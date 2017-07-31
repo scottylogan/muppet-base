@@ -1,8 +1,10 @@
-# data/Debian/physical_armv7l.yaml
+# data/Debian/physical.yaml
 # defaults for physical Debian-based systems
 #
 ---
 base::avahi: true
 base::add_cloud_config: false
+base::packages::install:
+  - avahi-daemon
 base::packages::uninstall:
   - cloud-init
