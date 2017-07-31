@@ -51,6 +51,15 @@ class base (
       source  => "puppet:///modules/${module_name}/etc/avahi/avahi-daemon.conf",
       require => Package['avahi-daemon'],
     }
+
+    file { '/etc/nsswitch.conf':
+      ensure  => file,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      source  => "puppet:///modules/${module_name}/etc/nsswitch.conf",
+      require => Package['avahi-daemon'],
+    }
   }
 
   file { '/etc/timezone':
