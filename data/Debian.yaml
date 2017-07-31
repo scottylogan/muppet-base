@@ -2,7 +2,6 @@
 # generic defaults for Debian-based systems
 ---
 base::packages::package_type: apt
-base::packages::docker_package: docker-ce
 base::packages::install:
   - adduser
   - aptitude

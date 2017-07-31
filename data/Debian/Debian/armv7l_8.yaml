@@ -1,7 +1,10 @@
 # data/Debian/armv7l_8.yaml
 # defaults for Debian armv7l systems (Raspberry Pis)
 ---
-base::packages::docker_package: docker-hypriot
+base::packages::uninstall:
+  - docker-ce
+base::packages::install:
+  - docker-hypriot
 base::packages::sources:
   main:
     comment:  "Raspbian APT Repo"

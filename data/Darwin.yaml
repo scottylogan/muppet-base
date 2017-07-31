@@ -3,7 +3,6 @@
 ---
 base::add_cloud_config: false
 base::packages::package_type: brew
-base::packages::docker_package: docker
 base::brew::taps:
   - homebrew/core
   - homebrew/completions
