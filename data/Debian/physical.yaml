@@ -6,5 +6,6 @@ base::avahi: true
 base::add_cloud_config: false
 base::packages::install:
   - avahi-daemon
+  - libnss-mdns
 base::packages::uninstall:
   - cloud-init

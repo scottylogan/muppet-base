@@ -58,7 +58,7 @@ class base (
       group   => 'root',
       mode    => '0644',
       source  => "puppet:///modules/${module_name}/etc/nsswitch.conf",
-      require => Package['avahi-daemon'],
+      require => Package['avahi-daemon','libnss-mdns'],
     }
   }
 
