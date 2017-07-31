@@ -24,6 +24,7 @@ class base (
   $lang,
   $charset,
   $add_cloud_config,
+  $avahi,
 ) {
 
   include base::packages
@@ -39,6 +40,17 @@ class base (
       require => Package['cloud-init'],
     }
 
+  }
+
+  if ($avahi) {
+    file { '/etc/avahi/avahi-daemon.conf':
+      ensure  => file,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      source  => "puppet:///modules/${module_name}/etc/avahi/avahi-daemon.conf",
+      require => Package['avahi-daemon'],
+    }
   }
 
   file { '/etc/timezone':

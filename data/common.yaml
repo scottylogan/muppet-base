@@ -6,6 +6,7 @@ base::timezone: PST8PDT
 base::lang: en_US
 base::charset: UTF-8
 base::locale: en_US.UTF-8
+base::avahi: false
 base::packages::easy_install: /usr/bin/easy_install
 base::packages::docker_package: docker
 base::packages::install:
