@@ -57,16 +57,12 @@ class base (
     target => "/usr/share/zoneinfo/${timezone}",
   }
 
-  if ($::osfamily != 'Darwin') {
-
-    file { '/etc/default/locale':
-      ensure => file,
-      owner  => 0,
-      group  => 0,
-      mode   => '0444',
-      source => "puppet:///modules/${module_name}/etc/default/locale",
-    }
-
+  file { '/etc/default/locale':
+    ensure => file,
+    owner  => 0,
+    group  => 0,
+    mode   => '0444',
+    source => "puppet:///modules/${module_name}/etc/default/locale",
   }
 
   include base::users
