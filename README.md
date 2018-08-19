@@ -12,9 +12,10 @@
 
 ## Description
 
-This module provides a consistent base configuration for Muppets. I use it mostly with Raspberry Pis,
-but also Debian Jessie and Ubuntu Trusty EC2 instances and Docker containers (it's a variant of a
-module I wrote for work, where we mostly use Docker containers running on EC2 instances).
+This module provides a consistent base configuration for Muppets. I use
+it mostly with Raspberry Pis, but also Debian Jessie and Ubuntu Trusty
+EC2 instances and Docker containers (it's a variant of a module I wrote
+for work, where we mostly use Docker containers running on EC2 instances).
 
 The module ensures that a base set of packages is installed, including
 
@@ -51,9 +52,8 @@ built; for example, non-Docker images also include
 
 ### What base affects
 
-*base* sets up APT or HomeBrew repos, installs common packages,
-and configures the timezone (default is PST8PDT) and locale (default is
-en_US).
+*base* sets up APT, installs common packages, and configures the
+timezone (default is PST8PDT) and locale (default is en_US).
 
 ### Setup requirements
 

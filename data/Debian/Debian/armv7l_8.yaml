@@ -1,10 +1,6 @@
 # data/Debian/armv7l_8.yaml
 # defaults for Debian armv7l systems (Raspberry Pis)
 ---
-base::packages::uninstall:
-  - docker-ce
-base::packages::install:
-  - docker-hypriot
 base::packages::sources:
   main:
     comment:  "Raspbian APT Repo"
@@ -19,13 +15,5 @@ base::packages::sources:
     repos: "main ui"
     key:
       id: CF8A1AF502A2AA2D763BAE7E82B129927FA3303E
-      server: keyserver.ubuntu.com
-  docker:
-    comment:  "Hypriot Raspberry Pi Docker APT Repo"
-    location: https://packagecloud.io/Hypriot/Schatzkiste/debian/
-    release:  "%{::lsbdistcodename}"
-    repos: main
-    key:
-      id: 418A7F2FB0E1E6E7EABF6FE8C2E73424D59097AB
       server: keyserver.ubuntu.com
 

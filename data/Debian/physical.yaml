@@ -7,6 +7,5 @@ base::add_cloud_config: false
 base::packages::install:
   - avahi-daemon
   - libnss-mdns
-  - docker-ce
 base::packages::uninstall:
   - cloud-init
