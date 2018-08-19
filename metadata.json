@@ -20,7 +20,7 @@
   ],
 
   "requirements": [
-    { "name": "puppet", "version_requirement": "4.x" }
+    { "name": "puppet", "version_requirement": "5.x" }
   ],
 
   "dependencies": [
