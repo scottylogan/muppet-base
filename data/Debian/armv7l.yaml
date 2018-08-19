@@ -1,0 +1,10 @@
+# data/Debian/armv7l.yaml
+# defaults for Debian armv7l systems (Raspberry Pis)
+---
+base::packages::sources:
+  updates:
+    ensure: absent
+  security:
+    ensure: absent
+  backports:
+    ensure: absent
