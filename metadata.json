@@ -10,10 +10,6 @@
 
   "operatingsystem_support": [
     {
-      "operatingsystem": "Darwin",
-      "operatingsystemmajrelease": [ "15", "16" ]
-    },
-    {
       "operatingsystem": "Debian",
       "operatingsystemmajrelease": [ "7", "8" ]
     },
@@ -29,7 +25,6 @@
 
   "dependencies": [
     { "name": "puppetlabs-stdlib",    "version_requirement": ">= 1.0.0" },
-    { "name": "puppetlabs-apt",       "version_requirement": ">= 2.2.0" },
-    { "name": "thekevjames-homebrew", "version_requirement": ">= 1.5.0" }
+    { "name": "puppetlabs-apt",       "version_requirement": ">= 2.2.0" }
   ]
 }

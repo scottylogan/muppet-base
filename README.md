@@ -16,8 +16,6 @@ This module provides a consistent base configuration for Muppets. I use it mostl
 but also Debian Jessie and Ubuntu Trusty EC2 instances and Docker containers (it's a variant of a
 module I wrote for work, where we mostly use Docker containers running on EC2 instances).
 
-In addition, it has some support for Darwin (macOS Sierra; it may work on earlier systems).
-
 The module ensures that a base set of packages is installed, including
 
 * bash
