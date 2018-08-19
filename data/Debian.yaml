@@ -17,10 +17,10 @@ base::packages::install:
   - vim-tiny
   - xz-utils
 base::packages::sources:
-  puppetlabs:
+  puppet5:
     comment: "PuppetLabs APT Repo"
     location: http://apt.puppetlabs.com
-    repos: main PC1
+    repos: puppet5
     key:
       id: 6F6B15509CF8E59E6E469F327F438280EF8D349F
       server: pgp.mit.edu
