@@ -9,8 +9,6 @@
 class base::packages (
   $install,
   $uninstall,
-  $pip,
-  $easy_install,
   $package_type,
   $sources,
 ){
