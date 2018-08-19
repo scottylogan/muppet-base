@@ -78,7 +78,6 @@ class base (
     target => "/usr/share/zoneinfo/${timezone}",
   }
 
-
   file { '/etc/default/locale':
     ensure => file,
     owner  => 0,
