@@ -16,3 +16,9 @@ base::packages::sources:
     key:
       id: CF8A1AF502A2AA2D763BAE7E82B129927FA3303E
       server: keyserver.ubuntu.com
+  updates:
+    ensure: absent
+  security:
+    ensure: absent
+  backports:
+    ensure: absent
