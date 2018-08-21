@@ -43,6 +43,22 @@ class base::users (
     gid => 65538,
   }
 
+  file { '/etc/sudoers.d':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+  }
+
+  @file { '/etc/sudoers.d/g_root':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0440',
+    content => '%root ALL=(ALL) NOPASSWD: ALL',
+    require => File['/etc/sudoers.d'],
+  }
+
   @user { 'scotty':
     comment        => 'Scotty Logan',
     home           => '/home/scotty',
