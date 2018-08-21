@@ -88,9 +88,9 @@ class base (
 
   include base::users
 
-  Group <| tag == sysadmin |>
-  User  <| tag == sysadmin |>
-  File  <| tag == sysadmin |>
-  Ssh_authorized_key <| tag == sysadmin |>
+  User  <| groups == root |>
+  File  <| group == root |>
+  Ssh_authorized_key <| tag == root |>
+
 }
 
