@@ -52,7 +52,6 @@ class base::users (
     gid            => 'family',
     groups         => [ 'root', 'sudo', 'parents' ],
     purge_ssh_keys => $managehome,
-    tag            => [sysadmin, dev, parent],
   }
 
   if ($managehome) {
@@ -101,7 +100,6 @@ class base::users (
     gid            => 'family',
     groups         => [ 'parents' ],
     purge_ssh_keys => $managehome,
-    tag            => [parent],
   }
 
   @user { 'caitlin':
@@ -113,7 +111,6 @@ class base::users (
     gid            => 'family',
     groups         => [ 'kids' ],
     purge_ssh_keys => $managehome,
-    tag            => [kid],
   }
 
   @user { 'cerys':
@@ -125,7 +122,6 @@ class base::users (
     gid            => 'family',
     groups         => [ 'kids' ],
     purge_ssh_keys => $managehome,
-    tag            => [kid],
   }
 
 }
