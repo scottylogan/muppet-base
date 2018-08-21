@@ -17,6 +17,25 @@ base::packages::install:
   - vim-tiny
   - xz-utils
 base::packages::sources:
+  main:
+    comment:  "Debian APT Repo"
+    location: http://deb.debian.org/debian
+    repos: "main contrib non-free"
+  updates:
+    comment: "Debian Updates APT Repo"
+    location: http://deb.debian.org/debian
+    release: "%{lsbdistcodename}-updates"
+    repos: "main contrib non-free"
+  security:
+    comment: "Debian Security APT Repo"
+    location: http://deb.debian.org/debian-security/
+    release: "%{lsbdistcodename}/updates"
+    repos: "main contrib non-free"
+  backports:
+    comment: "Debian Backports APT Repo"
+    location: http://deb.debian.org/debian
+    release: "%{lsbdistcodename}-backports"
+    repos: "main contrib non-free"
   puppet5:
     comment: "PuppetLabs APT Repo"
     location: http://apt.puppetlabs.com
@@ -24,4 +43,3 @@ base::packages::sources:
     key:
       id: 6F6B15509CF8E59E6E469F327F438280EF8D349F
       server: keyserver.ubuntu.com
-

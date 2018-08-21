@@ -1,7 +1,7 @@
 # data/common.yaml
 # really generic defaults
 ---
-base::add_cloud_config: true
+base::add_cloud_config: false
 base::timezone: PST8PDT
 base::lang: en_US
 base::charset: UTF-8
@@ -13,7 +13,6 @@ base::packages::install:
   - bc
   - bzip2
   - ca-certificates
-  - cloud-init
   - curl
   - ethtool
   - git

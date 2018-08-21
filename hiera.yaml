@@ -1,4 +1,4 @@
-# muppet/hiera.yaml
+# base/hiera.yaml
 #
 # Oh, the joys of multiple OSes on multiple architectures and virtualization
 # platforms!
@@ -11,24 +11,16 @@ defaults:
   data_hash: yaml_data
 
 hierarchy:
-  - name: "OS Family / OS Name / Virtual - Major Release"
-    path: "%{os.family}/%{os.name}/%{virtual}_%{os.release.major}.yaml"
   - name: "OS Family / OS Name / Virtual"
     path: "%{os.family}/%{os.name}/%{virtual}.yaml"
-  - name: "OS Family / OS Name / Architecture - Major Release"
-    path: "%{os.family}/%{os.name}/%{architecture}_%{os.release.major}.yaml"
   - name: "OS Family / OS Name / Architecture"
     path: "%{os.family}/%{os.name}/%{architecture}.yaml"
-  - name: "OS Family / OS Name / Major Release"
-    path: "%{os.family}/%{os.name}/%{os.release.major}.yaml"
   - name: "OS Family / OS Name"
     path: "%{os.family}/%{os.name}.yaml"
-  - name: "OS Family / Virtual - Architecture"
-    path: "%{os.family}/%{virtual}_%{architecture}.yaml"
   - name: "OS Family / Virtual"
     path: "%{os.family}/%{virtual}.yaml"
-  - name: "OS Family / Architecture"
-    path: "%{os.family}/%{architecture}.yaml"
+  - name: "Packer Build Name"
+    path: "%{packer_build_name}.yaml"
   - name: "OS Family"
     path: "%{os.family}.yaml"
   - name: "Virtual"

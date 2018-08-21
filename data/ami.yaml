@@ -1,0 +1,7 @@
+# data/ami.yaml
+# defaults for AMI builds
+# ---
+base::add_cloud_config: true
+base::users::managehome: true
+base::packages::install:
+  - cloud-init

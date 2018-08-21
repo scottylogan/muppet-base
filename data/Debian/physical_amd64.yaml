@@ -1,6 +1,0 @@
-# data/Debian/physical_amd64.yaml
-# defaults for physical Debian-based systems
-#
----
-base::packages::install:
-  - pciutils

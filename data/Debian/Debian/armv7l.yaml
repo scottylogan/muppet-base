@@ -9,6 +9,12 @@ base::packages::sources:
     key:
       id: A0DA38D0D76E8B5D638872819165938D90FDDD2E
       server: keyserver.ubuntu.com
+  updates:
+    ensure: absent
+  security:
+    ensure: absent
+  backports:
+    ensure: absent
   raspberrypi:
     comment:  "Raspberry Pi Foundation APT Repo"
     location: https://archive.raspberrypi.org/debian/
