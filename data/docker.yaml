@@ -8,5 +8,6 @@ base::packages::uninstall:
   - logrotate
   - ntp
   - ntpdate
+  - nvme-cli
   - openssh-server
   - pciutils
