@@ -24,6 +24,7 @@ base::packages::install:
   - manpages
   - ntp
   - ntpdate
+  - nvme-cli
   - openssh-server
   - rsyslog
   - tzdata
