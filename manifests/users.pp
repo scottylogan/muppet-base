@@ -31,15 +31,15 @@ class base::users (
     system => true,
   }
 
-  group { 'parents':
+  group { 'family':
     gid => 65536,
   }
 
-  group { 'kids':
+  group { 'parents':
     gid => 65537,
   }
 
-  group { 'family':
+  group { 'kids':
     gid => 65538,
   }
 
